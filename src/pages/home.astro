@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const skills = [
+  {
+    title: "Java & Spring Boot",
+    description: "Building robust, production-grade backends and microservice architectures with Spring ecosystem.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>`,
+  },
+  {
+    title: "Angular",
+    description: "Crafting scalable, enterprise-grade frontends with Angular, RxJS, and modern component patterns.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3M5.25 20.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>`,
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Deploying and managing applications on AWS and Azure with CI/CD pipelines, Kubernetes, and IaC.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>`,
+  },
+  {
+    title: "AI-Assisted Development",
+    description: "Integrating LLM-based tooling into real development workflows — beyond demos, into production.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>`,
+  },
+  {
+    title: "Enterprise Architecture",
+    description: "Designing systems that last — modular, maintainable architectures for complex business domains.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>`,
+  },
+  {
+    title: "Code Quality",
+    description: "Specification-based testing, structured code reviews, and systematic approaches to technical debt.",
+    icon: `<svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+  },
+];
+---
+
+<BaseLayout title="Home">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-24 md:pb-24 md:pt-32">
+      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">Senior Software Engineer & AI Enthusiast</p>
+      <h1 class="mb-6 font-heading text-4xl text-white md:text-5xl lg:text-6xl">
+        Thomas Jaspers
+      </h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+        I help organizations build better software by combining deep enterprise experience
+        with a pragmatic approach to AI-assisted development. No hype — just tools and
+        techniques that deliver measurable value.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href="/services"
+          class="inline-flex items-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-accent-light"
+        >
+          View Services
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center rounded-lg border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-accent hover:text-accent"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <h2 class="mb-4 font-heading text-2xl text-white md:text-3xl">Core Skills</h2>
+    <p class="mb-12 max-w-2xl text-slate-400">
+      Two decades of building enterprise software, now augmented by modern AI tooling.
+    </p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {skills.map(({ title, description, icon }) => (
+        <div class="group rounded-xl border border-slate-700/50 bg-slate-900/40 p-6 transition-all hover:border-accent/30 hover:bg-slate-900/60">
+          <div class="mb-4 text-accent" set:html={icon} />
+          <h3 class="mb-2 font-heading text-lg text-white">{title}</h3>
+          <p class="text-sm leading-relaxed text-slate-400">{description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why work with me -->
+  <section class="border-t border-slate-700/50">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <h2 class="mb-6 font-heading text-2xl text-white md:text-3xl">Why Work With Me</h2>
+      <div class="max-w-3xl space-y-4 text-lg leading-relaxed text-slate-300">
+        <p>
+          I bring the rare combination of hands-on coding experience and strategic
+          architectural thinking. Whether it's modernizing a legacy Spring monolith
+          or introducing AI-assisted workflows to your development team, I focus on
+          solutions that stick — not flashy prototypes that fall apart in production.
+        </p>
+        <p>
+          My approach is collaborative, transparent, and always grounded in your
+          business reality. I measure success by the long-term maintainability and
+          value of what we build together.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a
+          href="/contact"
+          class="inline-flex items-center text-accent transition-colors hover:text-accent-light"
+        >
+          Let's discuss your project
+          <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

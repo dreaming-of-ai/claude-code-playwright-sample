@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Thomas Jaspers — Senior Software Engineer & AI Enthusiast" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title} — Thomas Jaspers</title>
+  </head>
+  <body class="flex min-h-screen flex-col bg-slate-950 font-body text-slate-200">
+    <!-- Guard: hide content until auth check completes -->
+    <div id="app-shell" class="hidden flex flex-1 flex-col">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
+    <script>
+      import { enforceLogin } from "../scripts/login-guard";
+      enforceLogin();
+      const shell = document.getElementById("app-shell");
+      if (shell) shell.classList.remove("hidden");
+    </script>
+  </body>
+</html>

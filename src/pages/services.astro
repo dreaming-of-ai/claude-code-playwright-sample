@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const services = [
+  {
+    title: "AI-Assisted Software Development",
+    description:
+      "I help development teams integrate LLM-based tooling into their actual workflows — not as a gimmick, but as a genuine productivity multiplier. From intelligent code generation and automated test creation to AI-driven code reviews, I configure and fine-tune tools like Claude Code and GitHub Copilot to fit your team's tech stack and coding standards. The goal is always the same: ship better code faster, with full human oversight.",
+    icon: `<svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>`,
+  },
+  {
+    title: "Enterprise Architecture & Consulting",
+    description:
+      "Building systems that survive the first year is easy. Building systems that thrive after five is the real challenge. I bring deep experience with Spring Boot, Angular, and cloud-native platforms to help you design architectures that scale gracefully. Whether you're migrating a monolith, adopting microservices, or establishing platform engineering practices, I focus on long-term maintainability over short-term impressions.",
+    icon: `<svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>`,
+  },
+  {
+    title: "Code Review & Quality Assurance",
+    description:
+      "Code quality isn't just about catching bugs — it's about building a culture where good engineering practices are the default. I offer structured code review services that combine specification-based testing methodology with AI validation workflows. From technical debt assessments to establishing review standards that actually get followed, I help teams raise their quality bar sustainably.",
+    icon: `<svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+  },
+];
+---
+
+<BaseLayout title="Services">
+  <!-- Page header -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-6xl px-6 pb-12 pt-24 md:pb-16 md:pt-32">
+      <h1 class="mb-4 font-heading text-3xl text-white md:text-4xl lg:text-5xl">Services</h1>
+      <p class="max-w-2xl text-lg text-slate-300">
+        Practical expertise at the intersection of enterprise software engineering and
+        modern AI tooling — tailored to your team's actual needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service cards -->
+  <section class="mx-auto max-w-6xl px-6 pb-16 md:pb-24">
+    <div class="space-y-8">
+      {services.map(({ title, description, icon }) => (
+        <div class="rounded-2xl border border-slate-700/50 bg-slate-900/40 p-8 transition-all hover:border-accent/30 hover:bg-slate-900/60 md:p-10">
+          <div class="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+            <div class="flex-shrink-0 text-accent" set:html={icon} />
+            <div>
+              <h2 class="mb-3 font-heading text-xl text-white md:text-2xl">{title}</h2>
+              <p class="leading-relaxed text-slate-300">{description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Pricing note -->
+    <div class="mt-12 rounded-xl border border-slate-700/50 bg-slate-900/20 p-6 text-center">
+      <p class="text-slate-400">
+        <span class="font-medium text-slate-300">Pricing:</span> Rates available on request.
+        Every engagement is scoped individually based on complexity, duration, and team size.
+      </p>
+      <a
+        href="/contact"
+        class="mt-4 inline-flex items-center text-accent transition-colors hover:text-accent-light"
+      >
+        Request a quote
+        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

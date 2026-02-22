@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(qa/**)",
+      "Write(qa/reports/**)"    
+    ],
+    "deny": [
+      "Read(../src/**)"
+    ]
+  }
+}

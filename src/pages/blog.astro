@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    title: "Specification-Based Testing with AI: Moving Beyond Random Unit Tests",
+    date: "February 12, 2026",
+    teaser:
+      "Most teams generate unit tests with AI and call it a day. But without a clear specification, you're just testing implementation details. I explore how combining formal specifications with LLM-generated test suites produces dramatically better coverage — and more importantly, tests that actually catch regressions.",
+  },
+  {
+    title: "Claude Code in the Enterprise: Lessons from Six Months in the Trenches",
+    date: "January 28, 2026",
+    teaser:
+      "After half a year of using Claude Code across multiple enterprise projects, I share what worked, what didn't, and what I'd do differently. Spoiler: the biggest wins weren't in code generation — they were in documentation and code review workflows.",
+  },
+  {
+    title: "Why Your AI Agent Strategy Needs a Human Architecture",
+    date: "January 9, 2026",
+    teaser:
+      "AI agents are everywhere, but most enterprise adoption fails because teams focus on the AI part and ignore the human part. I break down a practical framework for designing human-AI collaboration workflows that respect both the capabilities of modern LLMs and the irreplaceable judgment of experienced engineers.",
+  },
+];
+---
+
+<BaseLayout title="Blog">
+  <!-- Page header -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-6xl px-6 pb-12 pt-24 md:pb-16 md:pt-32">
+      <h1 class="mb-4 font-heading text-3xl text-white md:text-4xl lg:text-5xl">Blog</h1>
+      <p class="max-w-2xl text-lg text-slate-300">
+        Thoughts on software engineering, AI-assisted development, and the messy
+        reality of building enterprise systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Article teasers -->
+  <section class="mx-auto max-w-6xl px-6 pb-16 md:pb-24">
+    <div class="space-y-8">
+      {articles.map(({ title, date, teaser }) => (
+        <article class="group rounded-2xl border border-slate-700/50 bg-slate-900/40 p-8 transition-all hover:border-accent/30 hover:bg-slate-900/60 md:p-10">
+          <time class="text-sm font-medium text-accent">{date}</time>
+          <h2 class="mb-3 mt-2 font-heading text-xl text-white md:text-2xl">
+            {title}
+          </h2>
+          <p class="mb-4 leading-relaxed text-slate-300">{teaser}</p>
+          <a
+            href="#"
+            class="inline-flex items-center text-sm font-medium text-accent transition-colors hover:text-accent-light"
+          >
+            Read more
+            <svg class="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
